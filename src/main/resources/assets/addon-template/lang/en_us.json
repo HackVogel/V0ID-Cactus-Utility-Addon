@@ -1,0 +1,9 @@
+{
+  "module_categories.exampleCategory": "Example",
+  "modules.exampleModule.name": "Example Module",
+  "modules.exampleModule.description": "This is an example module",
+  "modules.exampleModule.groups.example": "Example Group",
+  "modules.exampleModule.settings.sendGreetings.name": "Send Greetings",
+  "modules.exampleModule.settings.sendGreetings.description": "If greetings should be sent into chat when the module is toggled",
+  "commands.example.name": "Example Command"
+}

@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "addon-template",
+	"version": "${version}",
+	"name": "Addon Template for Cactus Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://cactusmod.xyz/",
+		"sources": "https://github.com/cactusmod/addon-template"
+	},
+	"icon": "assets/addon-template/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"cactus": [
+			"com.dwarslooper.cactus.addon_template.AddonTemplateMain"
+		]
+	},
+	"mixins": [
+		"addon-template.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
