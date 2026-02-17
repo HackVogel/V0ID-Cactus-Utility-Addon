@@ -39,7 +39,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
 	// Cactus Mod (Change here the Version you want to use)
-	modImplementation "maven.modrinth:cactus:0.11.1"
+	modImplementation "maven.modrinth:cactus:0.12"
 }
 
 processResources {
