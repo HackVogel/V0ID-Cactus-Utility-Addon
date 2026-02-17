@@ -1,6 +1,6 @@
 package com.dwarslooper.cactus.addon_template.mixin;
 
-import net.minecraft.client.MinecraftClient;
+import com.mojang.authlib.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

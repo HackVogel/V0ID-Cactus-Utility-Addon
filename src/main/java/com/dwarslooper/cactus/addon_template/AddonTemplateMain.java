@@ -9,7 +9,7 @@ import com.dwarslooper.cactus.client.feature.module.Category;
 import com.dwarslooper.cactus.client.feature.module.Module;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.item.Items;
+import net.minecraft.world.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +17,7 @@ public class AddonTemplateMain implements ICactusAddon {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger("Cactus Addon Template");
 
-	public static final Category CATEGORY = new Category("exampleCategory", Items.DIAMOND.getDefaultStack());
+	public static final Category CATEGORY = new Category("exampleCategory", Items.DIAMOND.getDefaultInstance());
 
 	@Override
 	public void onInitialize(RegistryBus registryBus) {
