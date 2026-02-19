@@ -1,36 +1,47 @@
-package com.dwarslooper.cactus.addon_template;
+package dev.hackvogel.v0id;
 
-import com.dwarslooper.cactus.addon_template.feature.commands.ExampleCommand;
-import com.dwarslooper.cactus.addon_template.feature.modules.ExampleModule;
 import com.dwarslooper.cactus.client.addon.v2.ICactusAddon;
 import com.dwarslooper.cactus.client.addon.v2.RegistryBus;
 import com.dwarslooper.cactus.client.feature.command.Command;
 import com.dwarslooper.cactus.client.feature.module.Category;
 import com.dwarslooper.cactus.client.feature.module.Module;
-import net.fabricmc.api.ModInitializer;
+import com.dwarslooper.cactus.client.gui.toast.ToastSystem;
+import dev.hackvogel.v0id.config.ConfigManager;
+import dev.hackvogel.v0id.feature.commands.AuthorizeCommand;
+import dev.hackvogel.v0id.feature.commands.ConfigCommand;
+import dev.hackvogel.v0id.feature.modules.AutoAuthorizeModule;
 
 import net.minecraft.world.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AddonTemplateMain implements ICactusAddon {
+public class V0ID implements ICactusAddon {
 
-	public static final Logger LOGGER = LoggerFactory.getLogger("Cactus Addon Template");
+	public static final Logger LOGGER = LoggerFactory.getLogger("V0ID-CAC-ADDON");
 
-	public static final Category CATEGORY = new Category("exampleCategory", Items.DIAMOND.getDefaultInstance());
+	public static final Category CATEGORY = new Category("V0ID", Items.COMMAND_BLOCK.getDefaultInstance());
 
 	@Override
 	public void onInitialize(RegistryBus registryBus) {
 		// This is called when the addon is initialized. It provides a RegistryBus
 		// which will be used to register new features and content
 
-		LOGGER.info("Hello, Cactus!");
+		LOGGER.info("Hello from V0ID!");
 
+		ConfigManager.loadConfig();
+
+		// CATEGORY
 		registryBus.register(Category.class, ctx -> CATEGORY);
-		registryBus.register(Module.class, ctx -> new ExampleModule());
-		registryBus.register(Command.class, ctx -> new ExampleCommand());
 
-		LOGGER.info("Template Addon successfully loaded!");
+		// MODULES
+		registryBus.register(Module.class, ctx -> new AutoAuthorizeModule());
+
+		// COMMANDS
+		registryBus.register(Command.class, ctx -> new AuthorizeCommand());
+		registryBus.register(Command.class, ctx -> new ConfigCommand());
+
+
+		LOGGER.info("V0ID-CAC-ADDON successfully loaded!");
 	}
 
 	@Override

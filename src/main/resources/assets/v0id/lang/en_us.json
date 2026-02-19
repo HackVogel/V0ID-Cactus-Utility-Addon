@@ -1,0 +1,8 @@
+{
+  "module_categories.exampleCategory": "V0ID",
+  "modules.AutoAuthorizeModule.name": "AutoAuthorize",
+  "modules.AutoAuthorizeModule.description": "The module automatically authorises you on cracked servers.",
+  "modules.AutoAuthorizeModoule.groups.example": "V0ID",
+  "commands.AuthorizeCommand.name": "Authorize",
+  "commands.ConfigCommand.name": "Config"
+}

@@ -1,25 +1,25 @@
 {
 	"schemaVersion": 1,
-	"id": "addon-template",
+	"id": "v0id",
 	"version": "${version}",
-	"name": "Addon Template for Cactus Mod",
-	"description": "This is an example description! Tell everyone what your addon is about!",
+	"name": "V0ID Addon for Cactus-Mod",
+	"description": "Some Utilities for CactusMod",
 	"authors": [
-		"Me!"
+		"HackVogel"
 	],
 	"contact": {
 		"homepage": "https://cactusmod.xyz/",
 		"sources": "https://github.com/cactusmod/addon-template"
 	},
-	"icon": "assets/addon-template/icon.png",
+	"icon": "assets/v0id/icon.png",
 	"environment": "client",
 	"entrypoints": {
 		"cactus": [
-			"com.dwarslooper.cactus.addon_template.AddonTemplateMain"
+			"dev.hackvogel.v0id.V0ID"
 		]
 	},
 	"mixins": [
-		"addon-template.mixins.json"
+		"v0id-addon.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.17.3",
