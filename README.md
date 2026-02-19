@@ -4,6 +4,7 @@
 ## New:
 * ChangelogScreen
 * Fix AutoAuthorizeModule
+* #void command
 
 ## Features:
 * AutoAuthorizer Module
@@ -22,6 +23,18 @@ If you have the AutoAuthorize module enabled, some servers will automatically re
 
 ![tut2](https://cdn.ghostfiles.rip/files/f1a1ad01-3252-401f-b1c0-9b6ce893a163.png)
 
+## DebugMode (Developer Mode)
+
+Debug mode makes it easier for you to further develop the mod by allowing you to test things more easily without having to call them up indirectly. You can activate DebugMode with `#config set debugmode true`. Then, the DebugScreen will open once each time you start the game, and a new button will be available in the MainMenu. This button is located next to the language setting and is labeled `V`. Clicking this button will also open the DebugScreen. 
+
+### Enable DebugMode
+![debugcmd](https://cdn.ghostfiles.rip/files/06a78b15-4dab-4ea9-a8d5-12249129ded4.jpg)
+
+### MainMenu with enabled DebugMode
+![mainmenu](https://cdn.ghostfiles.rip/files/90b009b0-3b4e-4b99-9ee3-e3ad7ac42bf2.png)
+
+### DebugScreen
+![DebugScreen](https://cdn.ghostfiles.rip/files/9e54b984-c061-44a0-8704-f85234c07cb1.png)
 
 Discord:
 hackvogel
