@@ -1,11 +1,14 @@
 package dev.hackvogel.v0id.feature.commands;
 
 import com.dwarslooper.cactus.client.feature.command.Command;
+import com.dwarslooper.cactus.client.gui.toast.ToastSystem;
 import com.dwarslooper.cactus.client.util.game.ChatUtils;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import dev.hackvogel.v0id.config.ConfigManager;
 import net.minecraft.commands.SharedSuggestionProvider;
+import net.minecraft.world.item.Items;
+
 import java.util.Random;
 
 public class ConfigCommand extends Command {
@@ -36,7 +39,29 @@ public class ConfigCommand extends Command {
                                 })
                         )
                 )
+                .then(literal("debugmode")
+                        .then(argument("true", StringArgumentType.string())
+                                .executes(context -> {
+                                    String newMode = StringArgumentType.getString(context, "true");
+                                    ConfigManager.getConfig().debugMode = newMode;
+                                    ConfigManager.saveConfig();
+                                    ChatUtils.infoPrefix("Config", "DebugMode updated to: " + newMode);
+                                    ToastSystem.displayMessage("V0ID Addon", "Debugging-Mode activated!", Items.DEBUG_STICK, 15000);
+                                    return SINGLE_SUCCESS;
+                                })
+                        )
+                        .then(argument("false", StringArgumentType.string())
+                                .executes(context -> {
+                                    String newMode = StringArgumentType.getString(context, "false");
+                                    ConfigManager.getConfig().debugMode = newMode;
+                                    ConfigManager.saveConfig();
+                                    ChatUtils.infoPrefix("Config", "DebugMode updated to: " + newMode);
+                                    return SINGLE_SUCCESS;
+                                })
+                        )
+                )
         );
+
 
         builder.then(literal("reload")
                 .executes(context -> {

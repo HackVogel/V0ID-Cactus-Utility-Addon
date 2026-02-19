@@ -1,6 +1,5 @@
 package dev.hackvogel.v0id.screens;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -8,17 +7,15 @@ import net.minecraft.client.gui.narration.NarratedElementType;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import org.joml.Matrix3x2fStack;
 
-
-public class ChangelogScreen extends Screen {
-    public ChangelogScreen(Component title) {
+public class DebugScreen extends Screen {
+    public DebugScreen(Component title) {
         super(title);
     }
 
     @Override
     public void updateNarrationState(NarrationElementOutput output) {
-        output.add(NarratedElementType.TITLE, Component.literal("V0ID Changelog"));
+        output.add(NarratedElementType.TITLE, Component.literal("V0ID Debugger"));
     }
 
     @Override
@@ -26,25 +23,18 @@ public class ChangelogScreen extends Screen {
         this.addRenderableWidget(Button.builder(Component.literal("Close"), btn -> {
             Minecraft.getInstance().setScreen(null);
         }).bounds(this.width / 2 - 50, this.height - 30, 100, 20).build());
+
+        this.addRenderableWidget(Button.builder(Component.literal("Changelog Screen"), btn -> {
+            Minecraft.getInstance().setScreen(new ChangelogScreen(Component.empty()));
+        }).bounds(this.width / 2 - 60, this.height - 60, 120, 20).build());
+
     }
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
         super.render(graphics, mouseX, mouseY, delta);
 
-        graphics.drawCenteredString(this.font, "V0ID Changelog", this.width / 2, 20, 0xfffc881f);
-
-        String[] lines = {
-                "v1.2 - Add debugMode | add ChangelogScreen",
-                "v1.1 - Fix AutoAuthorizeModule",
-                "v1.0 - Initial release"
-        };
-
-        int y = 50;
-        for (String line : lines) {
-            graphics.drawString(this.font, line, 20, y, 0xff02b50b);
-            y += 12;
-        }
+        graphics.drawCenteredString(this.font, "V0ID Debugger", this.width / 2, 20, 0xfffc881f);
     }
 
 
@@ -52,6 +42,5 @@ public class ChangelogScreen extends Screen {
     public boolean shouldCloseOnEsc() {
         return true;
     }
-
 
 }

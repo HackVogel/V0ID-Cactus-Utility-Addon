@@ -9,6 +9,7 @@ import com.dwarslooper.cactus.client.gui.toast.ToastSystem;
 import dev.hackvogel.v0id.config.ConfigManager;
 import dev.hackvogel.v0id.feature.commands.AuthorizeCommand;
 import dev.hackvogel.v0id.feature.commands.ConfigCommand;
+import dev.hackvogel.v0id.feature.commands.V0IDCommand;
 import dev.hackvogel.v0id.feature.modules.AutoAuthorizeModule;
 
 import net.minecraft.world.item.Items;
@@ -39,6 +40,7 @@ public class V0ID implements ICactusAddon {
 		// COMMANDS
 		registryBus.register(Command.class, ctx -> new AuthorizeCommand());
 		registryBus.register(Command.class, ctx -> new ConfigCommand());
+		registryBus.register(Command.class, ctx -> new V0IDCommand());
 
 
 		LOGGER.info("V0ID-CAC-ADDON successfully loaded!");

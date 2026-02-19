@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class ConfigManager {
 
-    private static final File CONFIG_FILE = new File("v0id-config.json");
+    private static final File CONFIG_FILE = new File("cactus/v0id-config.json");
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static Config config;
 
