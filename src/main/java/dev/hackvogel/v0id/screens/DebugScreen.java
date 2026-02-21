@@ -24,6 +24,10 @@ public class DebugScreen extends Screen {
             Minecraft.getInstance().setScreen(null);
         }).bounds(this.width / 2 - 50, this.height - 30, 100, 20).build());
 
+        this.addRenderableWidget(Button.builder(Component.literal("Ext Srv Widget Screen"), btn -> {
+            Minecraft.getInstance().setScreen(new ExtendedServerWidgetDebugScreen(Component.empty()));
+        }).bounds(this.width / 2 - 60, this.height - 90, 120, 20).build());
+
         this.addRenderableWidget(Button.builder(Component.literal("Changelog Screen"), btn -> {
             Minecraft.getInstance().setScreen(new ChangelogScreen(Component.empty()));
         }).bounds(this.width / 2 - 60, this.height - 60, 120, 20).build());

@@ -35,9 +35,13 @@ public class ChangelogScreen extends Screen {
         graphics.drawCenteredString(this.font, "V0ID Changelog", this.width / 2, 20, 0xfffc881f);
 
         String[] lines = {
-                "v1.2 - Add debugMode | add ChangelogScreen",
-                "v1.1 - Fix AutoAuthorizeModule",
-                "v1.0 - Initial release"
+                "v1.3  - Add Extended Server Widget Module (final release)",
+                "b1.32 - Add Debug screen for Extended Server Widget",
+                "b1.31 - Set widget color to Cactus ascent color",
+                "b1.30 - Add Extended Server Widget Module",
+                "v1.2  - Add debugMode | add ChangelogScreen",
+                "v1.1  - Fix AutoAuthorizeModule",
+                "v1.0  - Initial release"
         };
 
         int y = 50;

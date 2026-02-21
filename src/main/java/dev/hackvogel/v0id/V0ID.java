@@ -10,6 +10,7 @@ import dev.hackvogel.v0id.config.ConfigManager;
 import dev.hackvogel.v0id.feature.commands.AuthorizeCommand;
 import dev.hackvogel.v0id.feature.commands.ConfigCommand;
 import dev.hackvogel.v0id.feature.commands.V0IDCommand;
+import dev.hackvogel.v0id.feature.modules.AdvancedServerWidgetModule;
 import dev.hackvogel.v0id.feature.modules.AutoAuthorizeModule;
 
 import net.minecraft.world.item.Items;
@@ -36,6 +37,7 @@ public class V0ID implements ICactusAddon {
 
 		// MODULES
 		registryBus.register(Module.class, ctx -> new AutoAuthorizeModule());
+		registryBus.register(Module.class, ctx -> new AdvancedServerWidgetModule());
 
 		// COMMANDS
 		registryBus.register(Command.class, ctx -> new AuthorizeCommand());
@@ -48,7 +50,7 @@ public class V0ID implements ICactusAddon {
 
 	@Override
 	public void onLoadComplete() {
-		// This is called when Cactus is fully done initializing
+		// This is called when Cactus is fully done initializing<
 		// This does not mean the game has completely loaded yet
 	}
 

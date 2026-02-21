@@ -3,7 +3,8 @@
 	"package": "dev.hackvogel.v0id.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"TitleScreenMixin"
+		"screen.TitleScreenMixin",
+		"screen.GameMenuScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

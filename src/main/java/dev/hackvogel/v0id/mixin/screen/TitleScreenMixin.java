@@ -1,8 +1,7 @@
-package dev.hackvogel.v0id.mixin;
+package dev.hackvogel.v0id.mixin.screen;
 
 import com.dwarslooper.cactus.client.gui.toast.ToastSystem;
 import dev.hackvogel.v0id.config.ConfigManager;
-import dev.hackvogel.v0id.screens.ChangelogScreen;
 import dev.hackvogel.v0id.screens.DebugScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
@@ -14,13 +13,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.narration.NarratedElementType;
-import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
 
 @Mixin(TitleScreen.class)
 public class TitleScreenMixin extends Screen{
